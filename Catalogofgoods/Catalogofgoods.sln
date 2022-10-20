@@ -3,7 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalogofgoods", "Catalogofgoods\Catalogofgoods.csproj", "{BA35D6A6-1AE4-4A97-A376-FFC7BE141192}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalogofgoods", "Catalogofgoods\Catalogofgoods.csproj", "{BA35D6A6-1AE4-4A97-A376-FFC7BE141192}"
+	ProjectSection(ProjectDependencies) = postProject
+		{263338CA-F396-4DE4-B6EC-608CC9C4E76E} = {263338CA-F396-4DE4-B6EC-608CC9C4E76E}
+		{D29B1CCB-FECC-48BA-B409-AF49B09D3848} = {D29B1CCB-FECC-48BA-B409-AF49B09D3848}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Core", "Catalog.Core\Catalog.Core.csproj", "{D29B1CCB-FECC-48BA-B409-AF49B09D3848}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Repository", "Catalog.Repository\Catalog.Repository.csproj", "{263338CA-F396-4DE4-B6EC-608CC9C4E76E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D29B1CCB-FECC-48BA-B409-AF49B09D3848} = {D29B1CCB-FECC-48BA-B409-AF49B09D3848}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +26,14 @@ Global
 		{BA35D6A6-1AE4-4A97-A376-FFC7BE141192}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA35D6A6-1AE4-4A97-A376-FFC7BE141192}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA35D6A6-1AE4-4A97-A376-FFC7BE141192}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D29B1CCB-FECC-48BA-B409-AF49B09D3848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D29B1CCB-FECC-48BA-B409-AF49B09D3848}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D29B1CCB-FECC-48BA-B409-AF49B09D3848}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D29B1CCB-FECC-48BA-B409-AF49B09D3848}.Release|Any CPU.Build.0 = Release|Any CPU
+		{263338CA-F396-4DE4-B6EC-608CC9C4E76E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{263338CA-F396-4DE4-B6EC-608CC9C4E76E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{263338CA-F396-4DE4-B6EC-608CC9C4E76E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{263338CA-F396-4DE4-B6EC-608CC9C4E76E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
