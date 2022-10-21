@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Catalog.Core.Migrations
 {
-    public partial class FirstMigration : Migration
+    public partial class First : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -82,7 +82,8 @@ namespace Catalog.Core.Migrations
                 {
                     CategoryId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CategoryName = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    CategoryName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CategoryNumber = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -273,9 +274,9 @@ namespace Catalog.Core.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "41d3f253-596f-4835-b007-1e2b971120c9", "2d8d6a9c-e0de-4ff7-9f17-4542efd18298", "Moderator", "MODERATOR" },
-                    { "9f594d75-80eb-4207-ba6d-7a3cf7089011", "863bdd17-d3da-45bf-bbd1-9c43f0ce8544", "User", "USER" },
-                    { "def9cdbb-4a18-452d-b9c6-65289e1bc125", "ed061d08-cba9-4cfa-9f56-4767ca433006", "Admin", "ADMIN" }
+                    { "10068858-4208-4d2c-88e8-46e0e2b7ed1a", "028879ec-fd3d-4613-ba09-f46f4d2e4e68", "User", "USER" },
+                    { "92be1bd9-1811-4c43-b7e2-123124f9db26", "2bb18e84-5745-4936-8a0b-c882364c51dd", "Admin", "ADMIN" },
+                    { "e2753591-9d1e-4a84-b53e-7dfcc6561a07", "54219fd3-f9b3-4908-99bd-fe2c944824f5", "Moderator", "MODERATOR" }
                 });
 
             migrationBuilder.InsertData(
@@ -283,9 +284,9 @@ namespace Catalog.Core.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "ac74fbe3-b830-4b65-a37f-0bb39ffc02b4", 0, "99106cf5-42db-4c6f-b038-fb55cddd9ad7", "user@catalogofgoods.com", true, null, null, false, null, "USER@CATALOGOFGOODS.COM", "USER@CATALOGOFGOODS.COM", "AQAAAAEAACcQAAAAEDUopYt1WaDenoLpGYP+EuuZN7/q65MDm8R6+qDj0ua7wTujxH6r8yL1McAsoIoC6A==", null, false, "33a3b164-9e3b-4929-8f14-31d4f19927a2", false, "user@catalogofgoods.com" },
-                    { "dd1e4d44-013e-4fc8-b994-238abc59504f", 0, "b86726ee-a13f-4332-8fec-5a31fed4e6ea", "moderator@catalogofgoods.com", true, null, null, false, null, "MODERATOR@CATALOGOFGOODS.COM", "MODERATOR@CATALOGOFGOODS.COM", "AQAAAAEAACcQAAAAENrBJwYEGT67ukXTPUVWrAB8syBXlpeVScFeH35ACu+CaqoANKolzt233sGExSypNQ==", null, false, "9920304c-420b-40cf-9a14-a0fb5b301d13", false, "moderator@catalogofgoods.com" },
-                    { "df21fa2f-50c5-49a2-9e8f-e97d0a1bc052", 0, "612500a2-9e60-45a9-aacb-4e3de99a6831", "admin@catalogofgoods.com", true, null, null, false, null, "ADMIN@CATALOGOFGOODS.COM", "ADMIN@CATALOGOFGOODS.COM", "AQAAAAEAACcQAAAAEKCYtSwGex85KwiJ+FSqD8FOgKQPk447r7PK6uOneZliRm1YbezhcJ4ViBCC5LPuQQ==", null, false, "7e422887-a6ee-40b0-b01b-f3add62640b0", false, "admin@catalogofgoods.com" }
+                    { "22230341-3792-439f-8141-b95b97ffc10e", 0, "3ccc4416-9a17-4512-a394-4a9134ab6ceb", "admin@catalogofgoods.com", true, null, null, false, null, "ADMIN@CATALOGOFGOODS.COM", "ADMIN@CATALOGOFGOODS.COM", "AQAAAAEAACcQAAAAEJl0egXpLcTWsxJ7hoDzkq9wFPeeyPU1mqISl1MMfy2iihMhzZ0tVQDWs29iUFVRJA==", null, false, "d8a7e3a4-60e1-49ff-b263-5475c308054c", false, "admin@catalogofgoods.com" },
+                    { "68dbaff1-6961-4da8-b14b-4a664d283a58", 0, "7e6c635f-91a5-4d67-8a5d-5f7d4adc1c83", "moderator@catalogofgoods.com", true, null, null, false, null, "MODERATOR@CATALOGOFGOODS.COM", "MODERATOR@CATALOGOFGOODS.COM", "AQAAAAEAACcQAAAAEDkzMTeprPPNGeHRF9QdiDscfuaCSKxm6EX+QK8ukyQLWgJ1LKy/wdxTdm4BbH7QTA==", null, false, "c8d01be1-78dd-4a18-b590-acfbc543ef7a", false, "moderator@catalogofgoods.com" },
+                    { "d3a289ae-170f-4fee-bdf7-587c32d036ef", 0, "1b6bd83f-f482-4d63-b38d-65b1bad9acc6", "user@catalogofgoods.com", true, null, null, false, null, "USER@CATALOGOFGOODS.COM", "USER@CATALOGOFGOODS.COM", "AQAAAAEAACcQAAAAEBR+8194xC6rI1l606Qu7JjEKzzV/glHFNAok+AgHnnArsAOnv9umMJH43YTuRIlpg==", null, false, "8d4931df-bbd0-48e0-99f8-d12d37e4604d", false, "user@catalogofgoods.com" }
                 });
 
             migrationBuilder.InsertData(
@@ -314,14 +315,14 @@ namespace Catalog.Core.Migrations
 
             migrationBuilder.InsertData(
                 table: "Categories",
-                columns: new[] { "CategoryId", "CategoryName" },
+                columns: new[] { "CategoryId", "CategoryName", "CategoryNumber" },
                 values: new object[,]
                 {
-                    { 1, "Ноутбуки і компютери" },
-                    { 2, "Побутова техніка" },
-                    { 3, "Сантехніка та ремонт" },
-                    { 4, "Дитячі товари" },
-                    { 5, "Офіс,школа,книги" }
+                    { 1, "Ноутбуки і компютери", 0 },
+                    { 2, "Побутова техніка", 0 },
+                    { 3, "Сантехніка та ремонт", 0 },
+                    { 4, "Дитячі товари", 0 },
+                    { 5, "Офіс,школа,книги", 0 }
                 });
 
             migrationBuilder.InsertData(
@@ -354,9 +355,9 @@ namespace Catalog.Core.Migrations
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "9f594d75-80eb-4207-ba6d-7a3cf7089011", "ac74fbe3-b830-4b65-a37f-0bb39ffc02b4" },
-                    { "9f594d75-80eb-4207-ba6d-7a3cf7089011", "df21fa2f-50c5-49a2-9e8f-e97d0a1bc052" },
-                    { "def9cdbb-4a18-452d-b9c6-65289e1bc125", "df21fa2f-50c5-49a2-9e8f-e97d0a1bc052" }
+                    { "10068858-4208-4d2c-88e8-46e0e2b7ed1a", "22230341-3792-439f-8141-b95b97ffc10e" },
+                    { "92be1bd9-1811-4c43-b7e2-123124f9db26", "22230341-3792-439f-8141-b95b97ffc10e" },
+                    { "10068858-4208-4d2c-88e8-46e0e2b7ed1a", "d3a289ae-170f-4fee-bdf7-587c32d036ef" }
                 });
 
             migrationBuilder.InsertData(
