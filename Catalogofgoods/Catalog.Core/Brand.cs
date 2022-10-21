@@ -13,7 +13,7 @@ namespace Catalog.Core
         [Key]
         public int BrandId { get; set; }
         public string? BrandName { get; set; }
-        public ICollection<Goods>? Goodes { get; set; }
+        public ICollection<Goods> Goodes { get; set; }
 
     }
 }

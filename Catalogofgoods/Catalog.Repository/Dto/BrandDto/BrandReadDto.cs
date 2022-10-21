@@ -11,10 +11,10 @@ namespace Catalog.Repository.Dto.BrandDto
     public class BrandReadDto
     {
 
-        public int? BrandId { get; set; }
+        public int BrandId { get; set; }
         public string? BrandName { get; set; }
 
-        public ICollection<Goods>? Goodes { get; set; }
+        public ICollection<Goods> Goodes { get; set; }
 
     }
 }
