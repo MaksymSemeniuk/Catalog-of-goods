@@ -95,38 +95,38 @@ namespace Catalog.Core
                     UserId = USER_ID
                 });
 
-            builder.Entity<Type>().HasData(
-               new Type
+            builder.Entity<Typeg>().HasData(
+               new Typeg
                {
 
-                   TypeId = 1,
-                   TypeName = "Ноутбуки",
+                   TypegId = 1,
+                   TypegName = "Ноутбуки",
                    // TimetableId=1
 
                },
-               new Type
+               new Typeg
                {
-                   TypeId = 2,
-                   TypeName = "Техніка для кухні",
+                   TypegId = 2,
+                   TypegName = "Техніка для кухні",
                    // TimetableId = 2
 
                },
-               new Type
+               new Typeg
                {
-                   TypeId = 3,
-                   TypeName = "Кераміка",
+                   TypegId = 3,
+                   TypegName = "Кераміка",
                    // TimetableId = 3
                },
-               new Type
+               new Typeg
                {
-                   TypeId = 4,
-                   TypeName = "Іграшки",
+                   TypegId = 4,
+                   TypegName = "Іграшки",
                    // TimetableId = 4
                },
-               new Type
+               new Typeg
                {
-                   TypeId = 5,
-                   TypeName = "Все для навчання",
+                   TypegId = 5,
+                   TypegName = "Все для навчання",
                    // TimetableId = 5
                });
 
@@ -289,7 +289,7 @@ namespace Catalog.Core
              new Goods
              {
                  GoodsId = 1,
-                 TypeId = 1,
+                 TypegId = 1,
                  CategoryId = 1,
                  BrandId = 1,
                  BuyerId = 1,
@@ -298,7 +298,7 @@ namespace Catalog.Core
              new Goods
              {
                  GoodsId = 2,
-                 TypeId = 2,
+                 TypegId = 2,
                  CategoryId = 2,
                  BrandId = 2,
                  BuyerId = 2,

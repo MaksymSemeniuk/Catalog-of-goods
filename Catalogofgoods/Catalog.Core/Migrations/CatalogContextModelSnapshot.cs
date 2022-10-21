@@ -22,36 +22,6 @@ namespace Catalog.Core.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("BrandGoods", b =>
-                {
-                    b.Property<int>("BrandsBrandId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("GoodesGoodsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("BrandsBrandId", "GoodesGoodsId");
-
-                    b.HasIndex("GoodesGoodsId");
-
-                    b.ToTable("BrandGoods");
-                });
-
-            modelBuilder.Entity("BuyerGoods", b =>
-                {
-                    b.Property<int>("BuyersBuyerId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("GoodesGoodsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("BuyersBuyerId", "GoodesGoodsId");
-
-                    b.HasIndex("GoodesGoodsId");
-
-                    b.ToTable("BuyerGoods");
-                });
-
             modelBuilder.Entity("Catalog.Core.Brand", b =>
                 {
                     b.Property<int>("BrandId")
@@ -149,6 +119,9 @@ namespace Catalog.Core.Migrations
                     b.Property<string>("CategoryName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("CategoryNumber")
+                        .HasColumnType("int");
+
                     b.HasKey("CategoryId");
 
                     b.ToTable("Categories");
@@ -157,27 +130,32 @@ namespace Catalog.Core.Migrations
                         new
                         {
                             CategoryId = 1,
-                            CategoryName = "Ноутбуки і компютери"
+                            CategoryName = "Ноутбуки і компютери",
+                            CategoryNumber = 0
                         },
                         new
                         {
                             CategoryId = 2,
-                            CategoryName = "Побутова техніка"
+                            CategoryName = "Побутова техніка",
+                            CategoryNumber = 0
                         },
                         new
                         {
                             CategoryId = 3,
-                            CategoryName = "Сантехніка та ремонт"
+                            CategoryName = "Сантехніка та ремонт",
+                            CategoryNumber = 0
                         },
                         new
                         {
                             CategoryId = 4,
-                            CategoryName = "Дитячі товари"
+                            CategoryName = "Дитячі товари",
+                            CategoryNumber = 0
                         },
                         new
                         {
                             CategoryId = 5,
-                            CategoryName = "Офіс,школа,книги"
+                            CategoryName = "Офіс,школа,книги",
+                            CategoryNumber = 0
                         });
                 });
 
@@ -201,10 +179,20 @@ namespace Catalog.Core.Migrations
                     b.Property<int>("SellerId")
                         .HasColumnType("int");
 
-                    b.Property<int>("TypeId")
+                    b.Property<int>("TypegId")
                         .HasColumnType("int");
 
                     b.HasKey("GoodsId");
+
+                    b.HasIndex("BrandId");
+
+                    b.HasIndex("BuyerId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("SellerId");
+
+                    b.HasIndex("TypegId");
 
                     b.ToTable("Goodes");
 
@@ -216,7 +204,7 @@ namespace Catalog.Core.Migrations
                             BuyerId = 1,
                             CategoryId = 1,
                             SellerId = 1,
-                            TypeId = 1
+                            TypegId = 1
                         },
                         new
                         {
@@ -225,7 +213,7 @@ namespace Catalog.Core.Migrations
                             BuyerId = 2,
                             CategoryId = 2,
                             SellerId = 2,
-                            TypeId = 2
+                            TypegId = 2
                         });
                 });
 
@@ -277,46 +265,46 @@ namespace Catalog.Core.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Catalog.Core.Type", b =>
+            modelBuilder.Entity("Catalog.Core.Typeg", b =>
                 {
-                    b.Property<int>("TypeId")
+                    b.Property<int>("TypegId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TypeId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TypegId"), 1L, 1);
 
-                    b.Property<string>("TypeName")
+                    b.Property<string>("TypegName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("TypeId");
+                    b.HasKey("TypegId");
 
                     b.ToTable("Types");
 
                     b.HasData(
                         new
                         {
-                            TypeId = 1,
-                            TypeName = "Ноутбуки"
+                            TypegId = 1,
+                            TypegName = "Ноутбуки"
                         },
                         new
                         {
-                            TypeId = 2,
-                            TypeName = "Техніка для кухні"
+                            TypegId = 2,
+                            TypegName = "Техніка для кухні"
                         },
                         new
                         {
-                            TypeId = 3,
-                            TypeName = "Кераміка"
+                            TypegId = 3,
+                            TypegName = "Кераміка"
                         },
                         new
                         {
-                            TypeId = 4,
-                            TypeName = "Іграшки"
+                            TypegId = 4,
+                            TypegName = "Іграшки"
                         },
                         new
                         {
-                            TypeId = 5,
-                            TypeName = "Все для навчання"
+                            TypegId = 5,
+                            TypegName = "Все для навчання"
                         });
                 });
 
@@ -393,97 +381,52 @@ namespace Catalog.Core.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "cbbc2279-f86d-4b9d-91a6-5458152da87a",
+                            Id = "22230341-3792-439f-8141-b95b97ffc10e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2eb13566-9c6d-4e6f-af3a-f62fc1a9d3e1",
+                            ConcurrencyStamp = "3ccc4416-9a17-4512-a394-4a9134ab6ceb",
                             Email = "admin@catalogofgoods.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@CATALOGOFGOODS.COM",
                             NormalizedUserName = "ADMIN@CATALOGOFGOODS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAECHm4ojrVl9vmsMMMW21uzhThj7EfrvrBg5WTLYugpJmNbDHOLg0dSWJ/0iYZdkFaA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJl0egXpLcTWsxJ7hoDzkq9wFPeeyPU1mqISl1MMfy2iihMhzZ0tVQDWs29iUFVRJA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d14b096f-1b4d-4525-ae75-c1f364e476c9",
+                            SecurityStamp = "d8a7e3a4-60e1-49ff-b263-5475c308054c",
                             TwoFactorEnabled = false,
                             UserName = "admin@catalogofgoods.com"
                         },
                         new
                         {
-                            Id = "5157bd77-1614-4201-b6af-981befc9374f",
+                            Id = "68dbaff1-6961-4da8-b14b-4a664d283a58",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c4b47c9a-5857-48bd-a1b3-4b189a0a28b2",
+                            ConcurrencyStamp = "7e6c635f-91a5-4d67-8a5d-5f7d4adc1c83",
                             Email = "moderator@catalogofgoods.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MODERATOR@CATALOGOFGOODS.COM",
                             NormalizedUserName = "MODERATOR@CATALOGOFGOODS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEG5bXFHmObaKW+kKOhx+R9p+njNzZiz8tGYV3mMUzdHISmCISBI+JyCU/9Rt9QMKXw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDkzMTeprPPNGeHRF9QdiDscfuaCSKxm6EX+QK8ukyQLWgJ1LKy/wdxTdm4BbH7QTA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "179eb089-41ca-4ca3-b573-47e2a38a34de",
+                            SecurityStamp = "c8d01be1-78dd-4a18-b590-acfbc543ef7a",
                             TwoFactorEnabled = false,
                             UserName = "moderator@catalogofgoods.com"
                         },
                         new
                         {
-                            Id = "24781e57-8f7d-42c4-a38b-cda5379d57b3",
+                            Id = "d3a289ae-170f-4fee-bdf7-587c32d036ef",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "36989cd2-9678-4fe5-a9bb-8838d4012666",
+                            ConcurrencyStamp = "1b6bd83f-f482-4d63-b38d-65b1bad9acc6",
                             Email = "user@catalogofgoods.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@CATALOGOFGOODS.COM",
                             NormalizedUserName = "USER@CATALOGOFGOODS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBWhaHOTwjivh0x4icqfavgKo8tVAOycaEzhLJhQlv8uW2AnV9IHooGMoXix6BGRwg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBR+8194xC6rI1l606Qu7JjEKzzV/glHFNAok+AgHnnArsAOnv9umMJH43YTuRIlpg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "eabc549c-3c4e-49c0-a6aa-3dcbda87213a",
+                            SecurityStamp = "8d4931df-bbd0-48e0-99f8-d12d37e4604d",
                             TwoFactorEnabled = false,
                             UserName = "user@catalogofgoods.com"
                         });
-                });
-
-            modelBuilder.Entity("CategoryGoods", b =>
-                {
-                    b.Property<int>("CategoriesCategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("GoodesGoodsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CategoriesCategoryId", "GoodesGoodsId");
-
-                    b.HasIndex("GoodesGoodsId");
-
-                    b.ToTable("CategoryGoods");
-                });
-
-            modelBuilder.Entity("GoodsSeller", b =>
-                {
-                    b.Property<int>("GoodesGoodsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SellersSellerId")
-                        .HasColumnType("int");
-
-                    b.HasKey("GoodesGoodsId", "SellersSellerId");
-
-                    b.HasIndex("SellersSellerId");
-
-                    b.ToTable("GoodsSeller");
-                });
-
-            modelBuilder.Entity("GoodsType", b =>
-                {
-                    b.Property<int>("GoodesGoodsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TypesTypeId")
-                        .HasColumnType("int");
-
-                    b.HasKey("GoodesGoodsId", "TypesTypeId");
-
-                    b.HasIndex("TypesTypeId");
-
-                    b.ToTable("GoodsType");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -515,22 +458,22 @@ namespace Catalog.Core.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "ff879bcd-b0df-42da-a67f-f0facb6d69e6",
-                            ConcurrencyStamp = "467f3bf6-5b07-43fc-8d07-e9dfa48cdfa9",
+                            Id = "92be1bd9-1811-4c43-b7e2-123124f9db26",
+                            ConcurrencyStamp = "2bb18e84-5745-4936-8a0b-c882364c51dd",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "ce5dd7fc-6168-4cb0-9bd0-5e995a1aac2f",
-                            ConcurrencyStamp = "d38eebe5-a413-4cb2-a255-f285d6c263ab",
+                            Id = "e2753591-9d1e-4a84-b53e-7dfcc6561a07",
+                            ConcurrencyStamp = "54219fd3-f9b3-4908-99bd-fe2c944824f5",
                             Name = "Moderator",
                             NormalizedName = "MODERATOR"
                         },
                         new
                         {
-                            Id = "a2203cc7-160b-43b0-bce4-97d6af576c46",
-                            ConcurrencyStamp = "5ee38dea-4064-4505-8d65-b615c3d9085a",
+                            Id = "10068858-4208-4d2c-88e8-46e0e2b7ed1a",
+                            ConcurrencyStamp = "028879ec-fd3d-4613-ba09-f46f4d2e4e68",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -627,18 +570,18 @@ namespace Catalog.Core.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "cbbc2279-f86d-4b9d-91a6-5458152da87a",
-                            RoleId = "ff879bcd-b0df-42da-a67f-f0facb6d69e6"
+                            UserId = "22230341-3792-439f-8141-b95b97ffc10e",
+                            RoleId = "92be1bd9-1811-4c43-b7e2-123124f9db26"
                         },
                         new
                         {
-                            UserId = "cbbc2279-f86d-4b9d-91a6-5458152da87a",
-                            RoleId = "a2203cc7-160b-43b0-bce4-97d6af576c46"
+                            UserId = "22230341-3792-439f-8141-b95b97ffc10e",
+                            RoleId = "10068858-4208-4d2c-88e8-46e0e2b7ed1a"
                         },
                         new
                         {
-                            UserId = "24781e57-8f7d-42c4-a38b-cda5379d57b3",
-                            RoleId = "a2203cc7-160b-43b0-bce4-97d6af576c46"
+                            UserId = "d3a289ae-170f-4fee-bdf7-587c32d036ef",
+                            RoleId = "10068858-4208-4d2c-88e8-46e0e2b7ed1a"
                         });
                 });
 
@@ -663,79 +606,47 @@ namespace Catalog.Core.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("BrandGoods", b =>
+            modelBuilder.Entity("Catalog.Core.Goods", b =>
                 {
-                    b.HasOne("Catalog.Core.Brand", null)
-                        .WithMany()
-                        .HasForeignKey("BrandsBrandId")
+                    b.HasOne("Catalog.Core.Brand", "Brand")
+                        .WithMany("Goodes")
+                        .HasForeignKey("BrandId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Catalog.Core.Goods", null)
-                        .WithMany()
-                        .HasForeignKey("GoodesGoodsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("BuyerGoods", b =>
-                {
-                    b.HasOne("Catalog.Core.Buyer", null)
-                        .WithMany()
-                        .HasForeignKey("BuyersBuyerId")
+                    b.HasOne("Catalog.Core.Buyer", "Buyer")
+                        .WithMany("Goodes")
+                        .HasForeignKey("BuyerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Catalog.Core.Goods", null)
-                        .WithMany()
-                        .HasForeignKey("GoodesGoodsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("CategoryGoods", b =>
-                {
-                    b.HasOne("Catalog.Core.Category", null)
-                        .WithMany()
-                        .HasForeignKey("CategoriesCategoryId")
+                    b.HasOne("Catalog.Core.Category", "Category")
+                        .WithMany("Goodes")
+                        .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Catalog.Core.Goods", null)
-                        .WithMany()
-                        .HasForeignKey("GoodesGoodsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("GoodsSeller", b =>
-                {
-                    b.HasOne("Catalog.Core.Goods", null)
-                        .WithMany()
-                        .HasForeignKey("GoodesGoodsId")
+                    b.HasOne("Catalog.Core.Seller", "Seller")
+                        .WithMany("Goodes")
+                        .HasForeignKey("SellerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Catalog.Core.Seller", null)
-                        .WithMany()
-                        .HasForeignKey("SellersSellerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("GoodsType", b =>
-                {
-                    b.HasOne("Catalog.Core.Goods", null)
-                        .WithMany()
-                        .HasForeignKey("GoodesGoodsId")
+                    b.HasOne("Catalog.Core.Typeg", "Typeg")
+                        .WithMany("Goodes")
+                        .HasForeignKey("TypegId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Catalog.Core.Type", null)
-                        .WithMany()
-                        .HasForeignKey("TypesTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("Brand");
+
+                    b.Navigation("Buyer");
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Seller");
+
+                    b.Navigation("Typeg");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -787,6 +698,31 @@ namespace Catalog.Core.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Catalog.Core.Brand", b =>
+                {
+                    b.Navigation("Goodes");
+                });
+
+            modelBuilder.Entity("Catalog.Core.Buyer", b =>
+                {
+                    b.Navigation("Goodes");
+                });
+
+            modelBuilder.Entity("Catalog.Core.Category", b =>
+                {
+                    b.Navigation("Goodes");
+                });
+
+            modelBuilder.Entity("Catalog.Core.Seller", b =>
+                {
+                    b.Navigation("Goodes");
+                });
+
+            modelBuilder.Entity("Catalog.Core.Typeg", b =>
+                {
+                    b.Navigation("Goodes");
                 });
 #pragma warning restore 612, 618
         }

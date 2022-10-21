@@ -13,7 +13,8 @@ namespace Catalog.Core
         [Key]
         public int CategoryId { get; set; }
         public string? CategoryName { get; set; }
-        public ICollection<Goods>Goodes { get; set; }
+        public int CategoryNumber { get; set; }
+        public ICollection<Goods> Goodes { get; set; }
 
     }
 }

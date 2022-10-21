@@ -1,4 +1,5 @@
-﻿using Catalogofgoods.Models;
+﻿using Catalog.Repository.Repositories;
+using Catalogofgoods.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,15 +8,16 @@ namespace Catalogofgoods.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly GoodsRepository _goodsRepository;
+        public HomeController(ILogger<HomeController> logger, GoodsRepository goodsRepository)
         {
             _logger = logger;
+            _goodsRepository = goodsRepository;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            return View(await _goodsRepository.GetGoodsAsync());
         }
 
         public IActionResult Privacy()

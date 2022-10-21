@@ -56,7 +56,8 @@ $.validator.addMethod( "accept", function( value, element, param ) {
 		return optionalValue;
 	}
 
-	if ( $( element ).attr( "type" ) === "file" ) {
+	if ( $( element ).attr( "
+" ) === "file" ) {
 
 		// Escape string to be used in the regex
 		// see: https://stackoverflow.com/questions/3446170/escape-string-for-use-in-javascript-regex

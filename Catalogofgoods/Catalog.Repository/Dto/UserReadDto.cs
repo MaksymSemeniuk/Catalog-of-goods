@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Catalog.Repository.Dto.UserDto
+namespace Catalog.Repository.Dto
 {
     public class UserReadDto
     {

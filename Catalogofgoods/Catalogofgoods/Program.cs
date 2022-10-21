@@ -1,5 +1,6 @@
 using Catalog.Core;
 using Catalog.Repository;
+using Catalog.Repository.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
@@ -26,13 +27,14 @@ builder.Services.AddDefaultIdentity<User>(options =>
 builder.Services.AddControllers().AddJsonOptions(x =>
                 x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
-
-builder.Services.AddTransient<UsersRepository>();
-
-
-builder.Services.AddTransient<UsersRepository>();
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddTransient<UsersRepository>();
+builder.Services.AddTransient<BrandRepository>();
+builder.Services.AddTransient<BuyerRepository>();
+builder.Services.AddTransient<CategoryRepository>();
+builder.Services.AddTransient<SellerRepository>();
+builder.Services.AddTransient<TypegRepository>();
+builder.Services.AddTransient<GoodsRepository>();
 
 var app = builder.Build();
 

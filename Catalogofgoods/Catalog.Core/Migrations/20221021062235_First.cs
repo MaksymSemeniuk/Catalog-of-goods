@@ -82,28 +82,12 @@ namespace Catalog.Core.Migrations
                 {
                     CategoryId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CategoryName = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    CategoryName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CategoryNumber = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Categories", x => x.CategoryId);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Goodes",
-                columns: table => new
-                {
-                    GoodsId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    BuyerId = table.Column<int>(type: "int", nullable: false),
-                    CategoryId = table.Column<int>(type: "int", nullable: false),
-                    SellerId = table.Column<int>(type: "int", nullable: false),
-                    BrandId = table.Column<int>(type: "int", nullable: false),
-                    TypeId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Goodes", x => x.GoodsId);
                 });
 
             migrationBuilder.CreateTable(
@@ -123,13 +107,13 @@ namespace Catalog.Core.Migrations
                 name: "Types",
                 columns: table => new
                 {
-                    TypeId = table.Column<int>(type: "int", nullable: false)
+                    TypegId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    TypeName = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    TypegName = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Types", x => x.TypeId);
+                    table.PrimaryKey("PK_Types", x => x.TypegId);
                 });
 
             migrationBuilder.CreateTable(
@@ -239,122 +223,49 @@ namespace Catalog.Core.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "BrandGoods",
+                name: "Goodes",
                 columns: table => new
                 {
-                    BrandsBrandId = table.Column<int>(type: "int", nullable: false),
-                    GoodesGoodsId = table.Column<int>(type: "int", nullable: false)
+                    GoodsId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    BrandId = table.Column<int>(type: "int", nullable: false),
+                    BuyerId = table.Column<int>(type: "int", nullable: false),
+                    CategoryId = table.Column<int>(type: "int", nullable: false),
+                    SellerId = table.Column<int>(type: "int", nullable: false),
+                    TypegId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BrandGoods", x => new { x.BrandsBrandId, x.GoodesGoodsId });
+                    table.PrimaryKey("PK_Goodes", x => x.GoodsId);
                     table.ForeignKey(
-                        name: "FK_BrandGoods_Brands_BrandsBrandId",
-                        column: x => x.BrandsBrandId,
+                        name: "FK_Goodes_Brands_BrandId",
+                        column: x => x.BrandId,
                         principalTable: "Brands",
                         principalColumn: "BrandId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_BrandGoods_Goodes_GoodesGoodsId",
-                        column: x => x.GoodesGoodsId,
-                        principalTable: "Goodes",
-                        principalColumn: "GoodsId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "BuyerGoods",
-                columns: table => new
-                {
-                    BuyersBuyerId = table.Column<int>(type: "int", nullable: false),
-                    GoodesGoodsId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_BuyerGoods", x => new { x.BuyersBuyerId, x.GoodesGoodsId });
-                    table.ForeignKey(
-                        name: "FK_BuyerGoods_Buyers_BuyersBuyerId",
-                        column: x => x.BuyersBuyerId,
+                        name: "FK_Goodes_Buyers_BuyerId",
+                        column: x => x.BuyerId,
                         principalTable: "Buyers",
                         principalColumn: "BuyerId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_BuyerGoods_Goodes_GoodesGoodsId",
-                        column: x => x.GoodesGoodsId,
-                        principalTable: "Goodes",
-                        principalColumn: "GoodsId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CategoryGoods",
-                columns: table => new
-                {
-                    CategoriesCategoryId = table.Column<int>(type: "int", nullable: false),
-                    GoodesGoodsId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CategoryGoods", x => new { x.CategoriesCategoryId, x.GoodesGoodsId });
-                    table.ForeignKey(
-                        name: "FK_CategoryGoods_Categories_CategoriesCategoryId",
-                        column: x => x.CategoriesCategoryId,
+                        name: "FK_Goodes_Categories_CategoryId",
+                        column: x => x.CategoryId,
                         principalTable: "Categories",
                         principalColumn: "CategoryId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_CategoryGoods_Goodes_GoodesGoodsId",
-                        column: x => x.GoodesGoodsId,
-                        principalTable: "Goodes",
-                        principalColumn: "GoodsId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "GoodsSeller",
-                columns: table => new
-                {
-                    GoodesGoodsId = table.Column<int>(type: "int", nullable: false),
-                    SellersSellerId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_GoodsSeller", x => new { x.GoodesGoodsId, x.SellersSellerId });
-                    table.ForeignKey(
-                        name: "FK_GoodsSeller_Goodes_GoodesGoodsId",
-                        column: x => x.GoodesGoodsId,
-                        principalTable: "Goodes",
-                        principalColumn: "GoodsId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_GoodsSeller_Sellers_SellersSellerId",
-                        column: x => x.SellersSellerId,
+                        name: "FK_Goodes_Sellers_SellerId",
+                        column: x => x.SellerId,
                         principalTable: "Sellers",
                         principalColumn: "SellerId",
                         onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "GoodsType",
-                columns: table => new
-                {
-                    GoodesGoodsId = table.Column<int>(type: "int", nullable: false),
-                    TypesTypeId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_GoodsType", x => new { x.GoodesGoodsId, x.TypesTypeId });
                     table.ForeignKey(
-                        name: "FK_GoodsType_Goodes_GoodesGoodsId",
-                        column: x => x.GoodesGoodsId,
-                        principalTable: "Goodes",
-                        principalColumn: "GoodsId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_GoodsType_Types_TypesTypeId",
-                        column: x => x.TypesTypeId,
+                        name: "FK_Goodes_Types_TypegId",
+                        column: x => x.TypegId,
                         principalTable: "Types",
-                        principalColumn: "TypeId",
+                        principalColumn: "TypegId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -363,9 +274,9 @@ namespace Catalog.Core.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "a2203cc7-160b-43b0-bce4-97d6af576c46", "5ee38dea-4064-4505-8d65-b615c3d9085a", "User", "USER" },
-                    { "ce5dd7fc-6168-4cb0-9bd0-5e995a1aac2f", "d38eebe5-a413-4cb2-a255-f285d6c263ab", "Moderator", "MODERATOR" },
-                    { "ff879bcd-b0df-42da-a67f-f0facb6d69e6", "467f3bf6-5b07-43fc-8d07-e9dfa48cdfa9", "Admin", "ADMIN" }
+                    { "10068858-4208-4d2c-88e8-46e0e2b7ed1a", "028879ec-fd3d-4613-ba09-f46f4d2e4e68", "User", "USER" },
+                    { "92be1bd9-1811-4c43-b7e2-123124f9db26", "2bb18e84-5745-4936-8a0b-c882364c51dd", "Admin", "ADMIN" },
+                    { "e2753591-9d1e-4a84-b53e-7dfcc6561a07", "54219fd3-f9b3-4908-99bd-fe2c944824f5", "Moderator", "MODERATOR" }
                 });
 
             migrationBuilder.InsertData(
@@ -373,9 +284,9 @@ namespace Catalog.Core.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "24781e57-8f7d-42c4-a38b-cda5379d57b3", 0, "36989cd2-9678-4fe5-a9bb-8838d4012666", "user@catalogofgoods.com", true, null, null, false, null, "USER@CATALOGOFGOODS.COM", "USER@CATALOGOFGOODS.COM", "AQAAAAEAACcQAAAAEBWhaHOTwjivh0x4icqfavgKo8tVAOycaEzhLJhQlv8uW2AnV9IHooGMoXix6BGRwg==", null, false, "eabc549c-3c4e-49c0-a6aa-3dcbda87213a", false, "user@catalogofgoods.com" },
-                    { "5157bd77-1614-4201-b6af-981befc9374f", 0, "c4b47c9a-5857-48bd-a1b3-4b189a0a28b2", "moderator@catalogofgoods.com", true, null, null, false, null, "MODERATOR@CATALOGOFGOODS.COM", "MODERATOR@CATALOGOFGOODS.COM", "AQAAAAEAACcQAAAAEG5bXFHmObaKW+kKOhx+R9p+njNzZiz8tGYV3mMUzdHISmCISBI+JyCU/9Rt9QMKXw==", null, false, "179eb089-41ca-4ca3-b573-47e2a38a34de", false, "moderator@catalogofgoods.com" },
-                    { "cbbc2279-f86d-4b9d-91a6-5458152da87a", 0, "2eb13566-9c6d-4e6f-af3a-f62fc1a9d3e1", "admin@catalogofgoods.com", true, null, null, false, null, "ADMIN@CATALOGOFGOODS.COM", "ADMIN@CATALOGOFGOODS.COM", "AQAAAAEAACcQAAAAECHm4ojrVl9vmsMMMW21uzhThj7EfrvrBg5WTLYugpJmNbDHOLg0dSWJ/0iYZdkFaA==", null, false, "d14b096f-1b4d-4525-ae75-c1f364e476c9", false, "admin@catalogofgoods.com" }
+                    { "22230341-3792-439f-8141-b95b97ffc10e", 0, "3ccc4416-9a17-4512-a394-4a9134ab6ceb", "admin@catalogofgoods.com", true, null, null, false, null, "ADMIN@CATALOGOFGOODS.COM", "ADMIN@CATALOGOFGOODS.COM", "AQAAAAEAACcQAAAAEJl0egXpLcTWsxJ7hoDzkq9wFPeeyPU1mqISl1MMfy2iihMhzZ0tVQDWs29iUFVRJA==", null, false, "d8a7e3a4-60e1-49ff-b263-5475c308054c", false, "admin@catalogofgoods.com" },
+                    { "68dbaff1-6961-4da8-b14b-4a664d283a58", 0, "7e6c635f-91a5-4d67-8a5d-5f7d4adc1c83", "moderator@catalogofgoods.com", true, null, null, false, null, "MODERATOR@CATALOGOFGOODS.COM", "MODERATOR@CATALOGOFGOODS.COM", "AQAAAAEAACcQAAAAEDkzMTeprPPNGeHRF9QdiDscfuaCSKxm6EX+QK8ukyQLWgJ1LKy/wdxTdm4BbH7QTA==", null, false, "c8d01be1-78dd-4a18-b590-acfbc543ef7a", false, "moderator@catalogofgoods.com" },
+                    { "d3a289ae-170f-4fee-bdf7-587c32d036ef", 0, "1b6bd83f-f482-4d63-b38d-65b1bad9acc6", "user@catalogofgoods.com", true, null, null, false, null, "USER@CATALOGOFGOODS.COM", "USER@CATALOGOFGOODS.COM", "AQAAAAEAACcQAAAAEBR+8194xC6rI1l606Qu7JjEKzzV/glHFNAok+AgHnnArsAOnv9umMJH43YTuRIlpg==", null, false, "8d4931df-bbd0-48e0-99f8-d12d37e4604d", false, "user@catalogofgoods.com" }
                 });
 
             migrationBuilder.InsertData(
@@ -404,23 +315,14 @@ namespace Catalog.Core.Migrations
 
             migrationBuilder.InsertData(
                 table: "Categories",
-                columns: new[] { "CategoryId", "CategoryName" },
+                columns: new[] { "CategoryId", "CategoryName", "CategoryNumber" },
                 values: new object[,]
                 {
-                    { 1, "Ноутбуки і компютери" },
-                    { 2, "Побутова техніка" },
-                    { 3, "Сантехніка та ремонт" },
-                    { 4, "Дитячі товари" },
-                    { 5, "Офіс,школа,книги" }
-                });
-
-            migrationBuilder.InsertData(
-                table: "Goodes",
-                columns: new[] { "GoodsId", "BrandId", "BuyerId", "CategoryId", "SellerId", "TypeId" },
-                values: new object[,]
-                {
-                    { 1, 1, 1, 1, 1, 1 },
-                    { 2, 2, 2, 2, 2, 2 }
+                    { 1, "Ноутбуки і компютери", 0 },
+                    { 2, "Побутова техніка", 0 },
+                    { 3, "Сантехніка та ремонт", 0 },
+                    { 4, "Дитячі товари", 0 },
+                    { 5, "Офіс,школа,книги", 0 }
                 });
 
             migrationBuilder.InsertData(
@@ -438,7 +340,7 @@ namespace Catalog.Core.Migrations
 
             migrationBuilder.InsertData(
                 table: "Types",
-                columns: new[] { "TypeId", "TypeName" },
+                columns: new[] { "TypegId", "TypegName" },
                 values: new object[,]
                 {
                     { 1, "Ноутбуки" },
@@ -451,17 +353,21 @@ namespace Catalog.Core.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "a2203cc7-160b-43b0-bce4-97d6af576c46", "24781e57-8f7d-42c4-a38b-cda5379d57b3" });
+                values: new object[,]
+                {
+                    { "10068858-4208-4d2c-88e8-46e0e2b7ed1a", "22230341-3792-439f-8141-b95b97ffc10e" },
+                    { "92be1bd9-1811-4c43-b7e2-123124f9db26", "22230341-3792-439f-8141-b95b97ffc10e" },
+                    { "10068858-4208-4d2c-88e8-46e0e2b7ed1a", "d3a289ae-170f-4fee-bdf7-587c32d036ef" }
+                });
 
             migrationBuilder.InsertData(
-                table: "AspNetUserRoles",
-                columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "a2203cc7-160b-43b0-bce4-97d6af576c46", "cbbc2279-f86d-4b9d-91a6-5458152da87a" });
-
-            migrationBuilder.InsertData(
-                table: "AspNetUserRoles",
-                columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "ff879bcd-b0df-42da-a67f-f0facb6d69e6", "cbbc2279-f86d-4b9d-91a6-5458152da87a" });
+                table: "Goodes",
+                columns: new[] { "GoodsId", "BrandId", "BuyerId", "CategoryId", "SellerId", "TypegId" },
+                values: new object[,]
+                {
+                    { 1, 1, 1, 1, 1, 1 },
+                    { 2, 2, 2, 2, 2, 2 }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -503,29 +409,29 @@ namespace Catalog.Core.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BrandGoods_GoodesGoodsId",
-                table: "BrandGoods",
-                column: "GoodesGoodsId");
+                name: "IX_Goodes_BrandId",
+                table: "Goodes",
+                column: "BrandId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BuyerGoods_GoodesGoodsId",
-                table: "BuyerGoods",
-                column: "GoodesGoodsId");
+                name: "IX_Goodes_BuyerId",
+                table: "Goodes",
+                column: "BuyerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CategoryGoods_GoodesGoodsId",
-                table: "CategoryGoods",
-                column: "GoodesGoodsId");
+                name: "IX_Goodes_CategoryId",
+                table: "Goodes",
+                column: "CategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_GoodsSeller_SellersSellerId",
-                table: "GoodsSeller",
-                column: "SellersSellerId");
+                name: "IX_Goodes_SellerId",
+                table: "Goodes",
+                column: "SellerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_GoodsType_TypesTypeId",
-                table: "GoodsType",
-                column: "TypesTypeId");
+                name: "IX_Goodes_TypegId",
+                table: "Goodes",
+                column: "TypegId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -546,19 +452,7 @@ namespace Catalog.Core.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "BrandGoods");
-
-            migrationBuilder.DropTable(
-                name: "BuyerGoods");
-
-            migrationBuilder.DropTable(
-                name: "CategoryGoods");
-
-            migrationBuilder.DropTable(
-                name: "GoodsSeller");
-
-            migrationBuilder.DropTable(
-                name: "GoodsType");
+                name: "Goodes");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -577,9 +471,6 @@ namespace Catalog.Core.Migrations
 
             migrationBuilder.DropTable(
                 name: "Sellers");
-
-            migrationBuilder.DropTable(
-                name: "Goodes");
 
             migrationBuilder.DropTable(
                 name: "Types");
