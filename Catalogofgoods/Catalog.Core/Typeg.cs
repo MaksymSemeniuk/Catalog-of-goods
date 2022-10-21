@@ -8,12 +8,12 @@ using System.Xml;
 
 namespace Catalog.Core
 {
-    public class Type
+    public class Typeg
     {
         [Key]
-        public int TypeId { get; set; }
-        public string? TypeName { get; set; }
-        public ICollection<Goods>? Goodes { get; set; }
+        public int TypegId { get; set; }
+        public string? TypegName { get; set; }
+        public ICollection<Goods> Goodes { get; set; }
 
     }
 }

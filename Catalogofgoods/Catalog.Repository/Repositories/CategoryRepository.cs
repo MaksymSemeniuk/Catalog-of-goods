@@ -16,7 +16,7 @@ namespace Catalog.Repository.Repositories
             _ctx = ctx;
         }
 
-        public async Task<IEnumerable<CategoryReadDto>> GetFuelTypesAsync()
+        public async Task<IEnumerable<CategoryReadDto>> GetCategoryAsync()
         {
             var categoryDto = _ctx.Categories.
                 Select(x => new CategoryReadDto

@@ -6,13 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace Catalog.Repository.Dto.SellerDto
+namespace Catalog.Repository.Dto.TypegDto
 {
-    public class SellerReadDto
+    public class TypegReadDto
     {
 
-        public int SellerId { get; set; }
-        public string? SellerName { get; set; }
+        public int TypegId { get; set; }
+        public string? TypegName { get; set; }
 
         public ICollection<Goods> Goodes { get; set; }
 

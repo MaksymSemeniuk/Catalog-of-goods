@@ -25,7 +25,7 @@ namespace Catalog.Core
         public DbSet<Buyer> Buyers { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Seller> Sellers { get; set; }
-        public DbSet<Type> Types { get; set; }
+        public DbSet<Typeg> Types { get; set; }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Goods> Goodes { get; set; }
     }

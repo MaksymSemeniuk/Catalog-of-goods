@@ -11,10 +11,10 @@ namespace Catalog.Repository.Dto.BuyerDto
     public class BuyerReadDto
     {
 
-        public int? BuyerId { get; set; }
+        public int BuyerId { get; set; }
         public string? BuyerName { get; set; }
 
-        public ICollection<Goods>? Goodes { get; set; }
+        public ICollection<Goods> Goodes { get; set; }
 
     }
 }

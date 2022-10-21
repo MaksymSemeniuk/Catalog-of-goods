@@ -1,18 +1,15 @@
-﻿using System;
+﻿using Catalog.Core;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
-using System.Security.Claims;
 
-namespace Catalog.Core
+namespace Catalog.Repository.Dto.GoodsDto
 {
-    public class Goods
+    public class GoodsReadDto
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int GoodsId { get; set; }
 
         public int BrandId { get; set; }

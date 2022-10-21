@@ -11,10 +11,10 @@ namespace Catalog.Repository.Dto.CategoryDto
     public class CategoryReadDto
     {
 
-        public int? CategoryId { get; set; }
+        public int CategoryId { get; set; }
         public string? CategoryName { get; set; }
         
-        public ICollection<Goods>? Goodes { get; set; }
+        public ICollection<Goods> Goodes { get; set; }
 
     }
 }
