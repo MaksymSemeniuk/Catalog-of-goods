@@ -1,0 +1,38 @@
+﻿@using Catalog.Repository.Dto.BrandDto
+@model IEnumerable<BrandReadDto>
+
+@{
+}
+
+<div class="float-end">
+    <a href="/users/create" class="btn btn-outline-primary">Додати Бренд</a>
+</div>
+
+
+<h1>Список брендів</h1>
+<hr />
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>BrandId</th>
+            <th>BrandName</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var u in Model)
+        {
+            <tr>
+                <td>@u.BrandId </td>
+                <td>@u.BrandName </td>
+
+
+                <td>
+                    <a href="/users/edit/@u.BrandId" class="btn btn-warning">Редагувати</a>
+                    <a href="/users/delete/@u.BrandId" class="btn btn-danger">Видалити</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

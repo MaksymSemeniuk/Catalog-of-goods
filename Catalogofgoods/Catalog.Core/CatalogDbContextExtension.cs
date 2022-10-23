@@ -303,7 +303,35 @@ namespace Catalog.Core
                  BrandId = 2,
                  BuyerId = 2,
                  SellerId = 2
+             },
+             new Goods
+             {
+                 GoodsId = 3,
+                 TypegId = 3,
+                 CategoryId = 3,
+                 BrandId = 3,
+                 BuyerId = 3,
+                 SellerId = 3
+             },
+             new Goods
+             {
+                 GoodsId = 4,
+                 TypegId = 4,
+                 CategoryId = 4,
+                 BrandId = 4,
+                 BuyerId = 4,
+                 SellerId = 4
+             },
+             new Goods
+             {
+                 GoodsId = 5,
+                 TypegId = 5,
+                 CategoryId = 5,
+                 BrandId = 5,
+                 BuyerId = 5,
+                 SellerId = 5
              }
+
              );
         }
     }

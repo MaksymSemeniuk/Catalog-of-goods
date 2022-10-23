@@ -1,0 +1,38 @@
+﻿@using Catalog.Repository.Dto.TypegDto
+@model IEnumerable<TypegReadDto>
+
+@{
+}
+
+<div class="float-end">
+    <a href="/users/create" class="btn btn-outline-primary">Додати Тип</a>
+</div>
+
+
+<h1>Список Типів</h1>
+<hr />
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>TypegId</th>
+            <th>TypegName</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var u in Model)
+        {
+            <tr>
+                <td>@u.TypegId </td>
+                <td>@u.TypegName </td>
+
+
+                <td>
+                    <a href="/users/edit/@u.TypegId" class="btn btn-warning">Редагувати</a>
+                    <a href="/users/delete/@u.TypegId" class="btn btn-danger">Видалити</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,25 +1,27 @@
 ﻿using Catalogofgoods.Models;
 using Microsoft.AspNetCore.Mvc;
+using Catalog.Core;
+using Catalog.Repository.Dto.BrandDto;
 using Catalog.Repository.Repositories;
+using Catalogofgoods.Models;
 using System.Diagnostics;
 
-namespace GoodsControllers
+namespace Catalogofgoods.Controllers
 {
-    public class HomeController : Controller
+    public class BrandController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-        private readonly GoodsRepository _goodsRepository;
-        public HomeController(ILogger<HomeController> logger, GoodsRepository goodsRepository)
+        private readonly ILogger<BrandController> _logger;
+        private readonly BrandRepository _brandRepository;
+        public BrandController(ILogger<BrandController> logger, BrandRepository brandRepository)
         {
             _logger = logger;
-            _goodsRepository = goodsRepository;
+            _brandRepository = brandRepository;
         }
 
         public async Task<IActionResult> Index()
         {
-            return View(await _goodsRepository.GetGoodsAsync());
+            return View(await _brandRepository.GetBrandAsync());
         }
-
         public IActionResult Privacy()
         {
             return View();
@@ -32,3 +34,4 @@ namespace GoodsControllers
         }
     }
 }
+
