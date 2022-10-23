@@ -1,15 +1,17 @@
 ﻿using Catalogofgoods.Models;
 using Microsoft.AspNetCore.Mvc;
 using Catalog.Repository.Repositories;
+using Catalogofgoods.Models;
 using System.Diagnostics;
 
-namespace GoodsControllers
+namespace Catalog.Controllers
 {
-    public class HomeController : Controller
+    public class GoodsController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+
+        private readonly ILogger<GoodsController> _logger;
         private readonly GoodsRepository _goodsRepository;
-        public HomeController(ILogger<HomeController> logger, GoodsRepository goodsRepository)
+        public GoodsController(ILogger<GoodsController> logger, GoodsRepository goodsRepository)
         {
             _logger = logger;
             _goodsRepository = goodsRepository;

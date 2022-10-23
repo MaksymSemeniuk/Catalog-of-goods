@@ -1,0 +1,57 @@
+﻿@using Catalog.Repository.Dto.GoodsDto
+﻿@using Catalog.Core
+@using Catalog.Repository
+@using Catalog.Repository.Dto.BrandDto
+@using Catalog.Repository.Dto.BuyerDto
+@using Catalog.Repository.Dto.CategoryDto
+@using Catalog.Repository.Dto.TypegDto
+@using Catalog.Repository.Dto.SellerDto
+
+
+@model IEnumerable<GoodsReadDto>
+
+@{
+}
+
+
+
+
+<div class="float-end">
+    <a href="/days/create" class="btn btn-outline-primary">Додати товар</a>
+</div>
+
+
+<h1>Каталог товарів</h1>
+<hr />
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+
+            <th>Бренд</th>
+            <th>Покупець</th>
+            <th>Товар</th>
+            <th> Продавець</th>
+            <th>Тип</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var u in Model)
+        {
+            <tr>
+
+                <td>@u.Brand.BrandName </td>
+                <td>@u.Buyer.BuyerName  </td>
+
+                <td>@u.Category.CategoryName</td>
+                <td> @u.Seller.SellerName </td>
+                <td>@u.Typeg.TypegName</td>
+
+
+
+
+            </tr>
+        }
+    </tbody>
+</table>

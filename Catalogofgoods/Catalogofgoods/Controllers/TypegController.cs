@@ -1,25 +1,27 @@
 ﻿using Catalogofgoods.Models;
 using Microsoft.AspNetCore.Mvc;
+using Catalog.Core;
+using Catalog.Repository.Dto.TypegDto;
 using Catalog.Repository.Repositories;
+using Catalogofgoods.Models;
 using System.Diagnostics;
 
-namespace GoodsControllers
+namespace Catalogofgoods.Controllers
 {
-    public class HomeController : Controller
+    public class TypegController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-        private readonly GoodsRepository _goodsRepository;
-        public HomeController(ILogger<HomeController> logger, GoodsRepository goodsRepository)
+        private readonly ILogger<TypegController> _logger;
+        private readonly TypegRepository _typegRepository;
+        public TypegController(ILogger<TypegController> logger, TypegRepository typegRepository)
         {
             _logger = logger;
-            _goodsRepository = goodsRepository;
+            _typegRepository = typegRepository;
         }
 
         public async Task<IActionResult> Index()
         {
-            return View(await _goodsRepository.GetGoodsAsync());
+            return View(await _typegRepository.GetTypegAsync());
         }
-
         public IActionResult Privacy()
         {
             return View();
@@ -32,3 +34,4 @@ namespace GoodsControllers
         }
     }
 }
+
