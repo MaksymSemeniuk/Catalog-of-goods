@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Catalog.Core.Migrations
 {
-    public partial class TW : Migration
+    public partial class First : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -274,9 +274,9 @@ namespace Catalog.Core.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "0cf6d8e9-6bc3-4aab-a7db-409899b7c067", "036a08f7-b60b-4ef8-837c-b9e8a56078b4", "Moderator", "MODERATOR" },
-                    { "21fa36ae-1c13-4e3a-971d-8cd50087902f", "b5fe97dd-abf2-4249-8692-d488e5081291", "Admin", "ADMIN" },
-                    { "891a3b44-8cde-4f10-8c9b-50f883f2dac4", "4c1224fe-2aa1-4540-9082-43ef00c8b3d2", "User", "USER" }
+                    { "8a570d8b-e1ac-4799-9527-73778738c84a", "4835e353-7ce1-4301-8c9c-f46752357145", "Admin", "ADMIN" },
+                    { "e45d2096-0be1-4ed1-b0b6-af6e089ca76b", "43ef5f45-22c9-48a0-a832-6587e765765f", "User", "USER" },
+                    { "e595f53d-ffe6-43e5-acee-bdfe8f6ded92", "a6004abc-c594-4cf0-932d-1153dae55ee2", "Moderator", "MODERATOR" }
                 });
 
             migrationBuilder.InsertData(
@@ -284,9 +284,9 @@ namespace Catalog.Core.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "336e85b9-ad09-40c4-aa3e-eff250cafa9f", 0, "86e60e9c-d7c0-409c-ab1f-20bf7f00d1b7", "moderator@catalogofgoods.com", true, null, null, false, null, "MODERATOR@CATALOGOFGOODS.COM", "MODERATOR@CATALOGOFGOODS.COM", "AQAAAAEAACcQAAAAEKk+BH6ny4pFs0zxzchFSBZkoOIxFTlbsaAttVyr2seDCT28hMtE/Of3D+oQN5BNfA==", null, false, "b5f88cc0-b2b2-446f-bdea-39b566d6b9b8", false, "moderator@catalogofgoods.com" },
-                    { "725b760f-54ac-4ed4-bda1-c68543a61806", 0, "8ffaca18-c9d5-46f3-8e7a-87f4cfa04a48", "admin@catalogofgoods.com", true, null, null, false, null, "ADMIN@CATALOGOFGOODS.COM", "ADMIN@CATALOGOFGOODS.COM", "AQAAAAEAACcQAAAAEOOOTFSpjjPsZ3F0K+8jFbRek6nZ+bJVJ85Mgo2aGtSnqCqPxnIvRgzxekCbp0ykLg==", null, false, "43deef31-da3d-4f07-b204-d6d85c425456", false, "admin@catalogofgoods.com" },
-                    { "a0e09a5a-d74a-40f5-95f4-2e066eb20db7", 0, "058cba0a-9e93-484a-a482-006fbc83e162", "user@catalogofgoods.com", true, null, null, false, null, "USER@CATALOGOFGOODS.COM", "USER@CATALOGOFGOODS.COM", "AQAAAAEAACcQAAAAEErawpqbMowLeBg1YubL0mQ6PE7i/oZXFDbzEkb6Z3m9CKTT7D9Xpf6oc2qYNw4C0Q==", null, false, "e653a8a9-6156-42fd-857e-687795daf31b", false, "user@catalogofgoods.com" }
+                    { "1bbdd272-3e55-4711-8004-8910f559b8dd", 0, "aba63f7d-1bb9-4ff0-a5bc-2690d4f75e05", "user@catalogofgoods.com", true, null, null, false, null, "USER@CATALOGOFGOODS.COM", "USER@CATALOGOFGOODS.COM", "AQAAAAEAACcQAAAAEBNzYsuBxjLbR2nshAp5eqG0IeNuWKIsfQZep/lRuOQvoDtTA0ZGvGF5ap1OdQb9Mg==", null, false, "2a10de25-bd9d-46eb-a28e-19365366a1a9", false, "user@catalogofgoods.com" },
+                    { "b124468c-ace0-4fba-b0e1-eb4cb3ea01da", 0, "772ea965-73f1-4a10-a929-6117b5f2f527", "admin@catalogofgoods.com", true, null, null, false, null, "ADMIN@CATALOGOFGOODS.COM", "ADMIN@CATALOGOFGOODS.COM", "AQAAAAEAACcQAAAAEAy3AnqElsFkOrQsKYegEAOdSYHinZbz2ufPAIc8B+9viQxIbf4pUoO4goIFxDzm1A==", null, false, "a5f77338-1c33-4141-9b58-5bb4dc6902d7", false, "admin@catalogofgoods.com" },
+                    { "cf1d63ef-a8fe-4b99-abe3-c994ad56ca4a", 0, "63a3dc35-4042-4844-8ada-a4f290035c8b", "moderator@catalogofgoods.com", true, null, null, false, null, "MODERATOR@CATALOGOFGOODS.COM", "MODERATOR@CATALOGOFGOODS.COM", "AQAAAAEAACcQAAAAEKa+QqVyrKKoxjBI+6NoGqLstMxonGuGxnyENZZYgw0hbj2wCKBV3+pCmkcIskNsxg==", null, false, "700c56d2-d2e4-4356-8e1d-7f5e5d5cc415", false, "moderator@catalogofgoods.com" }
                 });
 
             migrationBuilder.InsertData(
@@ -355,9 +355,9 @@ namespace Catalog.Core.Migrations
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "21fa36ae-1c13-4e3a-971d-8cd50087902f", "725b760f-54ac-4ed4-bda1-c68543a61806" },
-                    { "891a3b44-8cde-4f10-8c9b-50f883f2dac4", "725b760f-54ac-4ed4-bda1-c68543a61806" },
-                    { "891a3b44-8cde-4f10-8c9b-50f883f2dac4", "a0e09a5a-d74a-40f5-95f4-2e066eb20db7" }
+                    { "e45d2096-0be1-4ed1-b0b6-af6e089ca76b", "1bbdd272-3e55-4711-8004-8910f559b8dd" },
+                    { "8a570d8b-e1ac-4799-9527-73778738c84a", "b124468c-ace0-4fba-b0e1-eb4cb3ea01da" },
+                    { "e45d2096-0be1-4ed1-b0b6-af6e089ca76b", "b124468c-ace0-4fba-b0e1-eb4cb3ea01da" }
                 });
 
             migrationBuilder.InsertData(
