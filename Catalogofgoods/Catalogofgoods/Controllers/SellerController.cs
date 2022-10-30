@@ -1,25 +1,27 @@
 ﻿using Catalogofgoods.Models;
 using Microsoft.AspNetCore.Mvc;
+using Catalog.Core;
+using Catalog.Repository.Dto.SellerDto;
 using Catalog.Repository.Repositories;
+using Catalogofgoods.Models;
 using System.Diagnostics;
 
-namespace GoodsControllers
+namespace Catalogofgoods.Controllers
 {
-    public class HomeController : Controller
+    public class SellerController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-        private readonly GoodsRepository _goodsRepository;
-        public HomeController(ILogger<HomeController> logger, GoodsRepository goodsRepository)
+        private readonly ILogger<SellerController> _logger;
+        private readonly SellerRepository _sellerRepository;
+        public SellerController(ILogger<SellerController> logger, SellerRepository sellerRepository)
         {
             _logger = logger;
-            _goodsRepository = goodsRepository;
+            _sellerRepository = sellerRepository;
         }
 
         public async Task<IActionResult> Index()
         {
-            return View(await _goodsRepository.GetGoodsAsync());
+            return View(await _sellerRepository.GetSellerAsync());
         }
-
         public IActionResult Privacy()
         {
             return View();
@@ -32,3 +34,4 @@ namespace GoodsControllers
         }
     }
 }
+

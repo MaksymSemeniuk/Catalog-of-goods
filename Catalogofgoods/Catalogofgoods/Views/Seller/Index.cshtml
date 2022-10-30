@@ -1,0 +1,38 @@
+﻿@using Catalog.Repository.Dto.SellerDto
+@model IEnumerable<SellerReadDto>
+
+@{
+}
+
+<div class="float-end">
+    <a href="/users/create" class="btn btn-outline-primary">Додати Продавця</a>
+</div>
+
+
+<h1>Список Продавців</h1>
+<hr />
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>SellerId</th>
+            <th>SellerName</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var u in Model)
+        {
+            <tr>
+                <td>@u.SellerId </td>
+                <td>@u.SellerName </td>
+
+
+                <td>
+                    <a href="/users/edit/@u.SellerId" class="btn btn-warning">Редагувати</a>
+                    <a href="/users/delete/@u.SellerId" class="btn btn-danger">Видалити</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

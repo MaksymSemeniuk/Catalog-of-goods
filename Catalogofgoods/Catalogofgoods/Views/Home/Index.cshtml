@@ -1,8 +1,45 @@
-﻿@{
+﻿@using Catalog.Repository.Dto.GoodsDto
+﻿@using Catalog.Core
+@using Catalog.Repository
+@using Catalog.Repository.Dto.BrandDto
+@using Catalog.Repository.Dto.BuyerDto
+@using Catalog.Repository.Dto.CategoryDto
+@using Catalog.Repository.Dto.TypegDto
+@using Catalog.Repository.Dto.SellerDto
+@model IEnumerable<GoodsReadDto>
+
+@{
     ViewData["Title"] = "Home Page";
 }
-
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+        @foreach (var u in Model)
+        {
+            <div class="card h-100">
+                
+                <div class="card-body p-4">
+                    <div class="text-center">
+
+
+
+                        <h5 class="fw-bolder">@u.Category.CategoryName  </h5>
+
+
+                    </div>
+                </div>
+                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+
+                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="Timetable">View options</a></div>
+
+
+
+                </div>
+            </div>
+        }
+
+
+    </div>
 </div>
+
+

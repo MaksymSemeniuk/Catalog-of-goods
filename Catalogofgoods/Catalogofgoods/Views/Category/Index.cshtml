@@ -1,0 +1,38 @@
+﻿@using Catalog.Repository.Dto.CategoryDto
+@model IEnumerable<CategoryReadDto>
+
+@{
+}
+
+<div class="float-end">
+    <a href="/users/create" class="btn btn-outline-primary">Додати Категорію</a>
+</div>
+
+
+<h1>Список категорій</h1>
+<hr />
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>CategoryId</th>
+            <th>CategoryName</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var u in Model)
+        {
+            <tr>
+                <td>@u.CategoryId </td>
+                <td>@u.CategoryName </td>
+
+
+                <td>
+                    <a href="/users/edit/@u.CategoryId" class="btn btn-warning">Редагувати</a>
+                    <a href="/users/delete/@u.CategoryId" class="btn btn-danger">Видалити</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
