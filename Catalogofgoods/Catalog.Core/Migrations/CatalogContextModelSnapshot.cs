@@ -214,33 +214,6 @@ namespace Catalog.Core.Migrations
                             CategoryId = 2,
                             SellerId = 2,
                             TypegId = 2
-                        },
-                        new
-                        {
-                            GoodsId = 3,
-                            BrandId = 3,
-                            BuyerId = 3,
-                            CategoryId = 3,
-                            SellerId = 3,
-                            TypegId = 3
-                        },
-                        new
-                        {
-                            GoodsId = 4,
-                            BrandId = 4,
-                            BuyerId = 4,
-                            CategoryId = 4,
-                            SellerId = 4,
-                            TypegId = 4
-                        },
-                        new
-                        {
-                            GoodsId = 5,
-                            BrandId = 5,
-                            BuyerId = 5,
-                            CategoryId = 5,
-                            SellerId = 5,
-                            TypegId = 5
                         });
                 });
 
@@ -408,49 +381,85 @@ namespace Catalog.Core.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "b124468c-ace0-4fba-b0e1-eb4cb3ea01da",
+<<<<<<< Updated upstream
+                            Id = "22230341-3792-439f-8141-b95b97ffc10e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "772ea965-73f1-4a10-a929-6117b5f2f527",
+                            ConcurrencyStamp = "3ccc4416-9a17-4512-a394-4a9134ab6ceb",
+=======
+                            Id = "5dc0d821-800a-408f-aa6d-2b76a2f86ab0",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "8b3d21a8-c4f0-4a18-98db-397ddafb88a0",
+>>>>>>> Stashed changes
                             Email = "admin@catalogofgoods.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@CATALOGOFGOODS.COM",
                             NormalizedUserName = "ADMIN@CATALOGOFGOODS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEAy3AnqElsFkOrQsKYegEAOdSYHinZbz2ufPAIc8B+9viQxIbf4pUoO4goIFxDzm1A==",
+<<<<<<< Updated upstream
+                            PasswordHash = "AQAAAAEAACcQAAAAEJl0egXpLcTWsxJ7hoDzkq9wFPeeyPU1mqISl1MMfy2iihMhzZ0tVQDWs29iUFVRJA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a5f77338-1c33-4141-9b58-5bb4dc6902d7",
+                            SecurityStamp = "d8a7e3a4-60e1-49ff-b263-5475c308054c",
+=======
+                            PasswordHash = "AQAAAAEAACcQAAAAEFOSHKRpOnUS0WHXkhyQaL0U+VAd4RbD6/ymPnarvzVu4qq0BDSZljnfbBoE/0qXWw==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "bfb1249c-0948-4c1f-9168-a8df01449773",
+>>>>>>> Stashed changes
                             TwoFactorEnabled = false,
                             UserName = "admin@catalogofgoods.com"
                         },
                         new
                         {
-                            Id = "cf1d63ef-a8fe-4b99-abe3-c994ad56ca4a",
+<<<<<<< Updated upstream
+                            Id = "68dbaff1-6961-4da8-b14b-4a664d283a58",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "63a3dc35-4042-4844-8ada-a4f290035c8b",
+                            ConcurrencyStamp = "7e6c635f-91a5-4d67-8a5d-5f7d4adc1c83",
+=======
+                            Id = "f74f8c49-57b1-4054-8594-5b799ba3824b",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "7ff55ab0-be81-452b-ad51-22fb3c4a4bcc",
+>>>>>>> Stashed changes
                             Email = "moderator@catalogofgoods.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MODERATOR@CATALOGOFGOODS.COM",
                             NormalizedUserName = "MODERATOR@CATALOGOFGOODS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEKa+QqVyrKKoxjBI+6NoGqLstMxonGuGxnyENZZYgw0hbj2wCKBV3+pCmkcIskNsxg==",
+<<<<<<< Updated upstream
+                            PasswordHash = "AQAAAAEAACcQAAAAEDkzMTeprPPNGeHRF9QdiDscfuaCSKxm6EX+QK8ukyQLWgJ1LKy/wdxTdm4BbH7QTA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "700c56d2-d2e4-4356-8e1d-7f5e5d5cc415",
+                            SecurityStamp = "c8d01be1-78dd-4a18-b590-acfbc543ef7a",
+=======
+                            PasswordHash = "AQAAAAEAACcQAAAAEIaW+F8mlw2+CjwRFLAY9mq1Kdyd8QKGLIwecf12JkG2mDoDzO5/Q1CTHcAAA0wd7g==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "bf2fb4a4-271a-4528-b518-88a5c9013985",
+>>>>>>> Stashed changes
                             TwoFactorEnabled = false,
                             UserName = "moderator@catalogofgoods.com"
                         },
                         new
                         {
-                            Id = "1bbdd272-3e55-4711-8004-8910f559b8dd",
+<<<<<<< Updated upstream
+                            Id = "d3a289ae-170f-4fee-bdf7-587c32d036ef",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "aba63f7d-1bb9-4ff0-a5bc-2690d4f75e05",
+                            ConcurrencyStamp = "1b6bd83f-f482-4d63-b38d-65b1bad9acc6",
+=======
+                            Id = "f7115d87-00ad-4bb3-85a5-29513399e0be",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "1166af13-26fd-4145-b0d4-89631cf5b514",
+>>>>>>> Stashed changes
                             Email = "user@catalogofgoods.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@CATALOGOFGOODS.COM",
                             NormalizedUserName = "USER@CATALOGOFGOODS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBNzYsuBxjLbR2nshAp5eqG0IeNuWKIsfQZep/lRuOQvoDtTA0ZGvGF5ap1OdQb9Mg==",
+<<<<<<< Updated upstream
+                            PasswordHash = "AQAAAAEAACcQAAAAEBR+8194xC6rI1l606Qu7JjEKzzV/glHFNAok+AgHnnArsAOnv9umMJH43YTuRIlpg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2a10de25-bd9d-46eb-a28e-19365366a1a9",
+                            SecurityStamp = "8d4931df-bbd0-48e0-99f8-d12d37e4604d",
+=======
+                            PasswordHash = "AQAAAAEAACcQAAAAEBwShN0dsMvbCmQbLfnHbc2CbRva1S6A570Rpx72AznspvEtCtWapmPLPCZXMBWE5g==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "3d0041dd-f6ab-49eb-85a8-acb75d208a09",
+>>>>>>> Stashed changes
                             TwoFactorEnabled = false,
                             UserName = "user@catalogofgoods.com"
                         });
@@ -485,22 +494,37 @@ namespace Catalog.Core.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "8a570d8b-e1ac-4799-9527-73778738c84a",
-                            ConcurrencyStamp = "4835e353-7ce1-4301-8c9c-f46752357145",
+<<<<<<< Updated upstream
+                            Id = "92be1bd9-1811-4c43-b7e2-123124f9db26",
+                            ConcurrencyStamp = "2bb18e84-5745-4936-8a0b-c882364c51dd",
+=======
+                            Id = "868ac47d-8b0e-4baf-9f6e-c465ac64e46e",
+                            ConcurrencyStamp = "12818f00-1ca4-4cbe-ac02-170d2e25db16",
+>>>>>>> Stashed changes
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "e595f53d-ffe6-43e5-acee-bdfe8f6ded92",
-                            ConcurrencyStamp = "a6004abc-c594-4cf0-932d-1153dae55ee2",
+<<<<<<< Updated upstream
+                            Id = "e2753591-9d1e-4a84-b53e-7dfcc6561a07",
+                            ConcurrencyStamp = "54219fd3-f9b3-4908-99bd-fe2c944824f5",
+=======
+                            Id = "c4452bd0-a1e1-4f35-899b-52fb8317d4a9",
+                            ConcurrencyStamp = "5d822f47-d08e-4b83-89ba-7c7da392b6dd",
+>>>>>>> Stashed changes
                             Name = "Moderator",
                             NormalizedName = "MODERATOR"
                         },
                         new
                         {
-                            Id = "e45d2096-0be1-4ed1-b0b6-af6e089ca76b",
-                            ConcurrencyStamp = "43ef5f45-22c9-48a0-a832-6587e765765f",
+<<<<<<< Updated upstream
+                            Id = "10068858-4208-4d2c-88e8-46e0e2b7ed1a",
+                            ConcurrencyStamp = "028879ec-fd3d-4613-ba09-f46f4d2e4e68",
+=======
+                            Id = "1cb6fbfe-55d6-4187-b7d4-7fca0f20de31",
+                            ConcurrencyStamp = "c30e6b35-3b63-48fe-bbd1-16e2bdc905a6",
+>>>>>>> Stashed changes
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -597,18 +621,33 @@ namespace Catalog.Core.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "b124468c-ace0-4fba-b0e1-eb4cb3ea01da",
-                            RoleId = "8a570d8b-e1ac-4799-9527-73778738c84a"
+<<<<<<< Updated upstream
+                            UserId = "22230341-3792-439f-8141-b95b97ffc10e",
+                            RoleId = "92be1bd9-1811-4c43-b7e2-123124f9db26"
                         },
                         new
                         {
-                            UserId = "b124468c-ace0-4fba-b0e1-eb4cb3ea01da",
-                            RoleId = "e45d2096-0be1-4ed1-b0b6-af6e089ca76b"
+                            UserId = "22230341-3792-439f-8141-b95b97ffc10e",
+                            RoleId = "10068858-4208-4d2c-88e8-46e0e2b7ed1a"
                         },
                         new
                         {
-                            UserId = "1bbdd272-3e55-4711-8004-8910f559b8dd",
-                            RoleId = "e45d2096-0be1-4ed1-b0b6-af6e089ca76b"
+                            UserId = "d3a289ae-170f-4fee-bdf7-587c32d036ef",
+                            RoleId = "10068858-4208-4d2c-88e8-46e0e2b7ed1a"
+=======
+                            UserId = "5dc0d821-800a-408f-aa6d-2b76a2f86ab0",
+                            RoleId = "868ac47d-8b0e-4baf-9f6e-c465ac64e46e"
+                        },
+                        new
+                        {
+                            UserId = "5dc0d821-800a-408f-aa6d-2b76a2f86ab0",
+                            RoleId = "1cb6fbfe-55d6-4187-b7d4-7fca0f20de31"
+                        },
+                        new
+                        {
+                            UserId = "f7115d87-00ad-4bb3-85a5-29513399e0be",
+                            RoleId = "1cb6fbfe-55d6-4187-b7d4-7fca0f20de31"
+>>>>>>> Stashed changes
                         });
                 });
 
