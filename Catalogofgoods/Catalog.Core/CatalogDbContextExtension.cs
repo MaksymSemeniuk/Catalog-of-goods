@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Catalog.Core
 {
@@ -86,6 +87,21 @@ namespace Catalog.Core
                 },
                 new IdentityUserRole<string>
                 {
+                    RoleId = MODERATOR_ROLE_ID,
+                    UserId = ADMIN_ID
+                },
+                new IdentityUserRole<string>
+                {
+                    RoleId = MODERATOR_ROLE_ID,
+                    UserId = MODERATOR_ID
+                },
+                new IdentityUserRole<string>
+                {
+                    RoleId = USER_ROLE_ID,
+                    UserId = MODERATOR_ID
+                },
+                new IdentityUserRole<string>
+                {
                     RoleId = USER_ROLE_ID,
                     UserId = ADMIN_ID
                 },
@@ -135,41 +151,31 @@ namespace Catalog.Core
                {
                    CategoryId = 1,
                    CategoryName = "Ноутбуки і компютери",
-                   //StartTime=,
-                   //EndTime=,
-                   // TimetableId = 1
+                   IconPath = @"\Images\165469_1519035578_0.png"
                },
                new Category
                {
                    CategoryId = 2,
                    CategoryName = "Побутова техніка",
-                   //StartTime=,
-                   //EndTime=,
-                   // TimetableId = 2
+                   IconPath = @"\Images\depositphotos_58139017-stock-photo-home-appliances-set-of-household.jpg"
                },
                 new Category
                 {
                     CategoryId = 3,
                     CategoryName = "Сантехніка та ремонт",
-                    //StartTime= DateTime.UtcNow,
-                    //EndTime=,
-                    // TimetableId = 3
+                    IconPath = @"\Images\service-centre.jpg"
                 },
                 new Category
                 {
                     CategoryId = 4,
                     CategoryName = "Дитячі товари",
-                    //StartTime=,
-                    //EndTime=,
-                    // TimetableId = 4
+                    IconPath = @"\Images\1577439474_kt128.jpg"
                 },
                 new Category
                 {
                     CategoryId = 5,
                     CategoryName = "Офіс,школа,книги",
-                    //StartTime=,
-                    //EndTime=,
-                    //TimetableId = 5
+                    IconPath = @"\Images\KancelarskyPort_24_785x350.jpg"
                 }
 
 

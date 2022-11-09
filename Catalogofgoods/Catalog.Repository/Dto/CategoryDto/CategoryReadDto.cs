@@ -16,5 +16,7 @@ namespace Catalog.Repository.Dto.CategoryDto
         
         public ICollection<Goods> Goodes { get; set; }
 
+        public string IconPath { get; set; }
+
     }
 }

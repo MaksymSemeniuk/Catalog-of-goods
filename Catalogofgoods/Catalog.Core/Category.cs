@@ -15,6 +15,7 @@ namespace Catalog.Core
         public string? CategoryName { get; set; }
         public int CategoryNumber { get; set; }
         public ICollection<Goods> Goodes { get; set; }
-
+        public string IconPath { get; set; }
     }
+
 }

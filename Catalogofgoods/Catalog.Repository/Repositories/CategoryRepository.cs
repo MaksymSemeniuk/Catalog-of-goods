@@ -21,12 +21,11 @@ namespace Catalog.Repository.Repositories
             var categoryDto = _ctx.Categories.
                 Select(x => new CategoryReadDto
                 {
-
-
                     CategoryId = x.CategoryId,
                     CategoryName = x.CategoryName,
-                    Goodes = x.Goodes
-                }).ToList();
+                    Goodes = x.Goodes,
+                    IconPath = x.IconPath
+    }).ToList();
 
             return categoryDto;
         }
