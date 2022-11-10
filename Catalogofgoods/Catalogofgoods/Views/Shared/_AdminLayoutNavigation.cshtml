@@ -6,7 +6,7 @@
         @(await Html.PartialAsync("_LoginPartial"))
         <hr />
         <li class="nav-item">
-            <a class="nav-link collapsed" href="index.html">
+            <a class="nav-link collapsed" href="https://localhost:7121">
                 <i class="bi bi-grid"></i>
                 <span>Головна сторінка</span>
             </a>
@@ -64,12 +64,13 @@
                 <span>Статуси замовлень</span>
             </a>
         </li><!-- End F.A.Q Page Nav -->
+
         }
         @if (User.IsInRole("Admin"))
         {
             <li class="nav-heading">Довідники</li>
         <li class="nav-item">
-            <a class="nav-link collapsed" href="pages-contact.html">
+            <a class="nav-link collapsed" href="Users/index">
                 <i class="bi bi-envelope"></i>
                 <span>Користувачі</span>
             </a>

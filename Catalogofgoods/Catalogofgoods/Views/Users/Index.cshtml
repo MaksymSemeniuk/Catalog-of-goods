@@ -2,6 +2,8 @@
 @model IEnumerable<UserReadDto>
 
 @{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <div class="float-end">
@@ -12,7 +14,10 @@
 <h1>Список користувачів</h1>
 <hr />
 
-<table class="table table-bordered">
+<!-- Dark Table -->
+
+<table class="table table-dark">
+
     <thead>
         <tr>
             <th>Full Name</th>
@@ -39,4 +44,3 @@
             </tr>
         }
     </tbody>
-</table>

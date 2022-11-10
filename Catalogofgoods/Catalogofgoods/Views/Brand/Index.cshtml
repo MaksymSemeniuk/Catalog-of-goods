@@ -2,7 +2,8 @@
 @model IEnumerable<BrandReadDto>
 
 @{
-    Layout = "~/Views/Shared/_AdminBlankLayout.cshtml";
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <div class="float-end">
@@ -13,16 +14,15 @@
 <h1>Список брендів</h1>
 <hr />
 
+
 <!-- Dark Table -->
 <table class="table table-dark">
     <thead>
-            <th scope="col">Назва</th>
-    <th scope="col"></th>
+    <th scope="col">Тип</th>
     <th scope="col"></th>
         @foreach (var u in Model)
         {
         <tr>
-            <td>@u.BrandId </td>
             <td>@u.BrandName </td>
             <td>
                 <a href="/users/edit/@u.BrandId" class="btn btn-warning">Редагувати</a>
@@ -31,7 +31,7 @@
         </tr>
         }
     </thead>
-    <tbody> 
+    <tbody>
     </tbody>
 </table>
 <!-- End Dark Table -->

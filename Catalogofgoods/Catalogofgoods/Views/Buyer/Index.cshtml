@@ -1,38 +1,40 @@
-﻿@using Catalog.Repository.Dto.BuyerDto
-@model IEnumerable<BuyerReadDto>
+﻿@using Catalog.Repository.Dto.SellerDto
+@model IEnumerable<SellerReadDto>
 
 @{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <div class="float-end">
-    <a href="/users/create" class="btn btn-outline-primary">Додати Покупця</a>
+    <a href="/users/create" class="btn btn-outline-primary">Додати Продавця</a>
 </div>
 
 
-<h1>Список покупців</h1>
+<h1>Список Продавців</h1>
 <hr />
 
-<table class="table table-bordered">
+<!-- Dark Table -->
+<table class="table table-dark">
     <thead>
-        <tr>
-            <th>BuyerId</th>
-            <th>BuyerName</th>
-
-        </tr>
-    </thead>
-    <tbody>
+    <th scope="col">Назва</th>
+    <th scope="col"></th>
+    <th scope="col"></th>
         @foreach (var u in Model)
         {
-            <tr>
-                <td>@u.BuyerId </td>
-                <td>@u.BuyerName </td>
-
-
-                <td>
-                    <a href="/users/edit/@u.BuyerId" class="btn btn-warning">Редагувати</a>
-                    <a href="/users/delete/@u.BuyerId" class="btn btn-danger">Видалити</a>
-                </td>
-            </tr>
+        <tr>
+            <td>@u.SellerId </td>
+            <td>@u.SellerName </td>
+            <td>
+                <a href="/users/edit/@u.SellerId" class="btn btn-warning">Редагувати</a>
+                <a href="/users/delete/@u.SellerId" class="btn btn-danger">Видалити</a>
+            </td>
+        </tr>
         }
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+<!-- End Dark Table -->
     </tbody>
 </table>

@@ -1,6 +1,11 @@
 ﻿@using Catalog.Repository.Dto
 @model UserCreateDto
 
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
 <div class="float-end">
     <a href="/users/index" class="btn btn-outline-dark">Повернутися до списку</a>
 </div>

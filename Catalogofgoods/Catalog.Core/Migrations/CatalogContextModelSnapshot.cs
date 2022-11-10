@@ -417,49 +417,49 @@ namespace Catalog.Core.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "b89e5e40-27ae-4111-963a-7720597facb0",
+                            Id = "6d961fe7-1b25-46b8-9b66-0b8cf246a479",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "bb0e6909-7ad9-42b8-a176-45b16c7f33f5",
+                            ConcurrencyStamp = "1df1872b-011d-4937-abf4-71ed8361dcc7",
                             Email = "admin@catalogofgoods.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@CATALOGOFGOODS.COM",
                             NormalizedUserName = "ADMIN@CATALOGOFGOODS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFfbH9iLGNYMVn5lTMnWraXr1MfeOpoodZ2ApntggG0Qu1JHKc9X3C4e5CAkSQciNg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJBK+5KTqbIgIS3yTuu0+Rw6F0z/4uVxasLlteInmFVcIKaHWQ25InLc3W5cyG2+nA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "83044696-51f9-498b-aac9-a1bd4132d8b5",
+                            SecurityStamp = "4a227c6e-892f-47c8-a01c-b379c7c22765",
                             TwoFactorEnabled = false,
                             UserName = "admin@catalogofgoods.com"
                         },
                         new
                         {
-                            Id = "7ad2915c-0c7f-4e9b-a539-d575b02e27f3",
+                            Id = "aa173607-64d0-46aa-80d6-3a86627e8890",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4984bc7a-1d56-4fce-91f5-4e4f50f438d7",
+                            ConcurrencyStamp = "36df6ab2-4d34-49d8-b3c9-25c3131c33a7",
                             Email = "moderator@catalogofgoods.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MODERATOR@CATALOGOFGOODS.COM",
                             NormalizedUserName = "MODERATOR@CATALOGOFGOODS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEH4M89qEkbeexV7zfjb2mEHdRkrGhe5KFP4hJ/g2n1/nyPgaj7bGKAP8JTocCVNS7g==",
+                            PasswordHash = "AQAAAAEAACcQAAAAELTeMk0U47Nf6TIcjtYmXTXhAnBJRoRJfcvjzz5fadV+/DmE4wUqwP1brCI/K3xtPg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "04c32907-6fef-4aa7-bc62-fc45312647f3",
+                            SecurityStamp = "29b68299-455f-4a63-bb4d-bff2c97eda91",
                             TwoFactorEnabled = false,
                             UserName = "moderator@catalogofgoods.com"
                         },
                         new
                         {
-                            Id = "e64a98cd-6002-4a55-b906-62eb8c363601",
+                            Id = "d9215f9e-82d9-45ec-9386-f6718c42ca26",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ef99d537-4831-4c1f-9dfc-277673ab8161",
+                            ConcurrencyStamp = "6999abf0-7265-4eeb-9178-7bc4859cc23a",
                             Email = "user@catalogofgoods.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@CATALOGOFGOODS.COM",
                             NormalizedUserName = "USER@CATALOGOFGOODS.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAENw75xYWKwgyJ8S8HlYbKYllzwpt6nD3SD4/zp443EK3Fh6whxmF1DbIPVJYyymIBw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJKJ9q8KaQO2G2SY74tpaMSLmgHq5WRs4rbksRPGXoB7TVLB5kRd5nsNO7RTw03HqA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "fdacbff3-2e41-4169-9f89-52a9e5ff9834",
+                            SecurityStamp = "55df1a4d-2fd0-4e73-859a-0d1325fed574",
                             TwoFactorEnabled = false,
                             UserName = "user@catalogofgoods.com"
                         });
@@ -494,22 +494,22 @@ namespace Catalog.Core.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "adf73d1d-6bd4-418e-8cd9-c05450d392ae",
-                            ConcurrencyStamp = "5036c4f5-e47f-420e-acfb-95cabc38aa1d",
+                            Id = "a1006b9a-1e89-417e-bf7a-18be531fda03",
+                            ConcurrencyStamp = "94f824e5-7532-4bde-9ca3-3553995354e6",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "612d8c4d-0ce1-4cd0-84f5-382b007b5f4a",
-                            ConcurrencyStamp = "7ae89c82-111c-4f40-96d6-c008e2f5c31d",
+                            Id = "b28d53fa-58ce-4e48-8538-f79da9cee39c",
+                            ConcurrencyStamp = "0200c53c-6ef4-43a7-aea4-23bcecb78040",
                             Name = "Moderator",
                             NormalizedName = "MODERATOR"
                         },
                         new
                         {
-                            Id = "cfd62cce-845b-4581-aaa1-6ec555a6dfb9",
-                            ConcurrencyStamp = "fae85c79-0dd9-4e1e-97a1-aefd66c1e533",
+                            Id = "d0386894-c566-4be6-9d80-2050d8c6a50d",
+                            ConcurrencyStamp = "37c929ea-c719-4dec-9b76-99e1970c9f00",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -606,33 +606,33 @@ namespace Catalog.Core.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "b89e5e40-27ae-4111-963a-7720597facb0",
-                            RoleId = "adf73d1d-6bd4-418e-8cd9-c05450d392ae"
+                            UserId = "6d961fe7-1b25-46b8-9b66-0b8cf246a479",
+                            RoleId = "a1006b9a-1e89-417e-bf7a-18be531fda03"
                         },
                         new
                         {
-                            UserId = "b89e5e40-27ae-4111-963a-7720597facb0",
-                            RoleId = "612d8c4d-0ce1-4cd0-84f5-382b007b5f4a"
+                            UserId = "6d961fe7-1b25-46b8-9b66-0b8cf246a479",
+                            RoleId = "b28d53fa-58ce-4e48-8538-f79da9cee39c"
                         },
                         new
                         {
-                            UserId = "7ad2915c-0c7f-4e9b-a539-d575b02e27f3",
-                            RoleId = "612d8c4d-0ce1-4cd0-84f5-382b007b5f4a"
+                            UserId = "aa173607-64d0-46aa-80d6-3a86627e8890",
+                            RoleId = "b28d53fa-58ce-4e48-8538-f79da9cee39c"
                         },
                         new
                         {
-                            UserId = "7ad2915c-0c7f-4e9b-a539-d575b02e27f3",
-                            RoleId = "cfd62cce-845b-4581-aaa1-6ec555a6dfb9"
+                            UserId = "aa173607-64d0-46aa-80d6-3a86627e8890",
+                            RoleId = "d0386894-c566-4be6-9d80-2050d8c6a50d"
                         },
                         new
                         {
-                            UserId = "b89e5e40-27ae-4111-963a-7720597facb0",
-                            RoleId = "cfd62cce-845b-4581-aaa1-6ec555a6dfb9"
+                            UserId = "6d961fe7-1b25-46b8-9b66-0b8cf246a479",
+                            RoleId = "d0386894-c566-4be6-9d80-2050d8c6a50d"
                         },
                         new
                         {
-                            UserId = "e64a98cd-6002-4a55-b906-62eb8c363601",
-                            RoleId = "cfd62cce-845b-4581-aaa1-6ec555a6dfb9"
+                            UserId = "d9215f9e-82d9-45ec-9386-f6718c42ca26",
+                            RoleId = "d0386894-c566-4be6-9d80-2050d8c6a50d"
                         });
                 });
 

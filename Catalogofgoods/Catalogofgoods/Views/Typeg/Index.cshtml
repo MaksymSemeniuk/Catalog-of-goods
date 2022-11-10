@@ -2,6 +2,8 @@
 @model IEnumerable<TypegReadDto>
 
 @{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <div class="float-end">
@@ -12,27 +14,25 @@
 <h1>Список Типів</h1>
 <hr />
 
-<table class="table table-bordered">
+<!-- Dark Table -->
+<table class="table table-dark">
     <thead>
-        <tr>
-            <th>TypegId</th>
-            <th>TypegName</th>
-
-        </tr>
-    </thead>
-    <tbody>
+    <th scope="col">Тип</th>
+    <th scope="col"></th>
         @foreach (var u in Model)
         {
-            <tr>
-                <td>@u.TypegId </td>
-                <td>@u.TypegName </td>
-
-
-                <td>
-                    <a href="/users/edit/@u.TypegId" class="btn btn-warning">Редагувати</a>
-                    <a href="/users/delete/@u.TypegId" class="btn btn-danger">Видалити</a>
-                </td>
-            </tr>
+        <tr>
+            <td>@u.TypegName </td>
+            <td>
+                <a href="/users/edit/@u.TypegId" class="btn btn-warning">Редагувати</a>
+                <a href="/users/delete/@u.TypegId" class="btn btn-danger">Видалити</a>
+            </td>
+        </tr>
         }
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+<!-- End Dark Table -->
     </tbody>
 </table>
