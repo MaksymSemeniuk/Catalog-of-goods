@@ -6,11 +6,17 @@
 @using Catalog.Repository.Dto.CategoryDto
 @using Catalog.Repository.Dto.TypegDto
 @using Catalog.Repository.Dto.SellerDto
-@model IEnumerable<GoodsReadDto>
+@model IEnumerable<CategoryReadDto>
 
 @{
     ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+
+<div class="pagetitle">
+      <h1>Welcome</h1>
+      </div>
+
 <div class="text-center">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
@@ -19,11 +25,12 @@
             <div class="card h-100">
                 
                 <div class="card-body p-4">
+                    <img class="card-img-top" src="@u.IconPath" alt="...">
                     <div class="text-center">
 
 
 
-                        <h5 class="fw-bolder">@u.Category.CategoryName  </h5>
+                        <h5 class="fw-bolder">@u.CategoryName  </h5>
 
 
                     </div>
